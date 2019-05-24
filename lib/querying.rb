@@ -29,7 +29,7 @@ def select_name_and_series_subgenres_of_authors
   JOIN series AS s 
   WHERE a.id = s.author_id
   GROUP BY a.name, sub.name;
-
+end
 
 def select_series_title_with_most_human_characters
   "Write your SQL query here"
