@@ -9,23 +9,27 @@ end
 
 def select_name_and_motto_of_char_with_longest_motto
   "SELECT c.name, c.motto
-   FROM characters AS c
-   ORDER BY LENGTH(c.motto) DESC
-   LIMIT 1;"
+  FROM characters AS c
+  ORDER BY LENGTH(c.motto) DESC
+  LIMIT 1;"
 end
 
 
 def select_value_and_count_of_most_prolific_species
   "SELECT c.species, COUNT(c.species)
-   FROM characters AS c
-   GROUP BY c.species
-   ORDER BY c.species DESC
-   LIMIT 1"
+  FROM characters AS c
+  GROUP BY c.species
+  ORDER BY c.species DESC
+  LIMIT 1"
 end
 
 def select_name_and_series_subgenres_of_authors
-  "Write your SQL query here"
-end
+  "SELECT a.name, sub.name
+  FROM authors AS a, subgenres AS sub 
+  JOIN series AS s 
+  WHERE a.id = s.author_id
+  GROUP BY a.name, sub.name;
+
 
 def select_series_title_with_most_human_characters
   "Write your SQL query here"
